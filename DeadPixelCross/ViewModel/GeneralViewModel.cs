@@ -8,20 +8,14 @@ using System.Threading.Tasks;
 
 namespace DeadPixelCross.ViewModel
 {
-    //[INotifyPropertyChanged]
-    public partial class GeneralViewModel : INotifyPropertyChanged
+    public partial class GeneralViewModel : ObservableObject
     {
-        //[ObservableProperty]
-        public string numberTest = "АУФ!";
+        [ObservableProperty]
+        private string _nameProgramm = "DeadPixelCross!";
+        [ObservableProperty]
+        public string _platformName = "Other";
+        [ObservableProperty]
+        public string _versionProgramm = "Version not recognized";
 
-        public GeneralViewModel() { }
-
-
-        public string NameTest
-        {
-            get { return numberTest; }
-            set { numberTest = value; PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("NameTest")); }
-        }
-        public event PropertyChangedEventHandler PropertyChanged;
     }
 }
