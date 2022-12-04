@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeadPixelCross.MainPage"
+             xmlns:local="clr-namespace:DeadPixelCross.ViewModel"
+             >
+    
+    <ContentPage.BindingContext>
+        <local:WindowsViewModel />
+    </ContentPage.BindingContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="30"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid>
+        <VerticalStackLayout
+            Grid.Row="0"
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <!--<Image
+                Source="dotnet_bot.png"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HeightRequest="200"
+                HorizontalOptions="Center" />-->
+
+            <Label
+                Text="{Binding NameProgramm}"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            
+                <HorizontalStackLayout Margin="0,-30,0,0" HorizontalOptions="Center">
+                    <Label Text="For Platform:" 
+                           FontSize="12" 
+                           FontAttributes="Italic"
+                           />
+                    <Label
+                        Text= "{Binding PlatformName}"
+                        FontSize="12"
+                       
+                        FontAttributes="Italic"/>
+                </HorizontalStackLayout>
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Start"
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Center" />
+
+            <!--<Button
+                Text="Start"
+                Command="{Binding AddTestCommand}"
+                HorizontalOptions="Center" />-->
+
+        </VerticalStackLayout>
+        </Grid>
+
+        <!--Footer -->
+        <Border Grid.Row="1">
+            <Grid Background="PowderBlue">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="100" />
+                </Grid.ColumnDefinitions>
+              
+                <!--Text Version app-->
+                <Label Text="{Binding VersionProgramm}" 
+                       Grid.Column="1" Margin="0,4,0,0"
+                       FontAttributes="Bold"/>
+                <!--Icon and link for github-->
+                <!--<Label Text="Github" Grid.Column="3" Margin="0,4,0,0"/>-->
+
+            </Grid>
+        </Border>
+
+    </Grid>
+
+</ContentPage>
