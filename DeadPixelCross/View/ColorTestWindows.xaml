@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DeadPixelCross.View.ColorTestWindows"
+             Title="ColorTestWindows" Shell.NavBarIsVisible="false"
+              xmlns:local="clr-namespace:DeadPixelCross.ViewModel">
+
+    <ContentPage.BindingContext>
+        <local:WindowsViewModel />
+    </ContentPage.BindingContext>
+    
+    <Grid >
+        <Button x:Name="ColorBtn" 
+                BackgroundColor="{Binding ColorWindow}" 
+                Command="{Binding ChangeColorInBtnCommand}">
+            
+        </Button>
+    </Grid>
+</ContentPage>
