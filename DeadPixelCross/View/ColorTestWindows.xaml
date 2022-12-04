@@ -9,11 +9,51 @@
         <local:WindowsViewModel />
     </ContentPage.BindingContext>
     
-    <Grid >
-        <Button x:Name="ColorBtn" 
-                BackgroundColor="{Binding ColorWindow}" 
-                Command="{Binding ChangeColorInBtnCommand}">
-            
-        </Button>
+    <Grid>
+        <!--Scenes with one color-->
+        <Grid x:Name="MonoColorScene" IsVisible="{Binding IsVisibleMonoColorScene}">
+            <Button x:Name="ColorBtn" 
+                    BackgroundColor="{Binding ColorWindow}" 
+                    Command="{Binding ChangeColorInBtnCommand}"
+                    >
+            </Button>
+        </Grid>
+        
+        <!--A screen with a large range of colors at once-->
+        <Grid x:Name="FullColorScene" IsVisible="{Binding IsVisibleFullColorScene}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="100"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button BackgroundColor="Gray" CornerRadius="0" Grid.Column="0" Margin="-1" Command="{Binding ChangeColorInBtnCommand}"/>
+                <Button BackgroundColor="Yellow" CornerRadius="0" Grid.Column="1" Margin="-1" Command="{Binding ChangeColorInBtnCommand}"/>
+                <Button BackgroundColor="Cyan" CornerRadius="0" Grid.Column="2" Margin="-1" Command="{Binding ChangeColorInBtnCommand}"/>
+                <Button BackgroundColor="Green" CornerRadius="0" Grid.Column="3" Margin="-1" Command="{Binding ChangeColorInBtnCommand}"/>
+                <Button BackgroundColor="Violet" CornerRadius="0" Grid.Column="4" Margin="-1" Command="{Binding ChangeColorInBtnCommand}"/>
+                <Button BackgroundColor="Red" CornerRadius="0" Grid.Column="5" Margin="-1" Command="{Binding ChangeColorInBtnCommand}"/>
+                <Button BackgroundColor="Blue" CornerRadius="0" Grid.Column="6" Margin="-1" Command="{Binding ChangeColorInBtnCommand}"/>
+            </Grid>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition Width="0.25*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button BackgroundColor="Black" CornerRadius="0" Grid.Column="0" Command="{Binding ChangeColorInBtnCommand}"/>
+                <Button BackgroundColor="White" CornerRadius="0" Grid.Column="1" Command="{Binding ChangeColorInBtnCommand}"/>
+                <Button BackgroundColor="Black" CornerRadius="0" Grid.Column="2" Command="{Binding ChangeColorInBtnCommand}"/>
+            </Grid>
+        </Grid>
     </Grid>
+   
 </ContentPage>
