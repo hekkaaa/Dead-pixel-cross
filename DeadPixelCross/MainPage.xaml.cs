@@ -14,7 +14,7 @@ public partial class MainPage : ContentPage
 
 	private void OnCounterClicked(object sender, EventArgs e)
 	{
-		Navigation.PushAsync(new NewPage1());
+        Navigation.PushAsync(new ColorTestWindows());
 	}
 }
 
