@@ -17,7 +17,8 @@ namespace DeadPixelCross.ViewModel
         public WindowsViewModel()
         {
             _platformName = "Windows";
-            _versionProgramm = "Version: 0.0.1 - test";
+            _versionProgramm = "0.0.2";
+            //_versionProgramm = DeadPixelCross.Resources.Language.Lang_en.VersionProgramm;
         }
 
 
